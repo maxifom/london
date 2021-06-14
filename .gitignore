@@ -1,0 +1,6 @@
+.stack-work/
+*~
+.idea
+dist-newstyle/
+out/
+london.iml
