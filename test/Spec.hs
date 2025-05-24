@@ -1,11 +1,11 @@
-import Lib
-import Test.HUnit
+import Lib (getCapital) -- Import getCapital, assuming london is not needed for these tests
+import Test.Hspec
 
-test1 :: Test
-test1 = TestCase (assertEqual "The most profound test case ever created" "London is the capital of Great Britain" (london "is the capital of Great Britain"))
+main :: IO ()
+main = hspec $ do
+  describe "getCapital" $ do
+    it "returns placeholder capital for a valid country name" $
+      getCapital "TestCountry" `shouldReturn` "PlaceholderCapital for TestCountry"
 
-tests :: Test
-tests = test [test1]
-
-main :: IO Counts
-main = runTestTT tests
+    it "returns error message for an empty country name" $
+      getCapital "" `shouldReturn` "Country name cannot be empty."

@@ -1,6 +1,10 @@
 module Main where
 
-import Lib
+import Lib (getCapital) -- Import getCapital
 
 main :: IO ()
-main = putStrLn (london "is the capital of Great Britain")
+main = do
+  putStrLn "Enter a country name:"
+  countryName <- getLine
+  capital <- getCapital countryName
+  putStrLn (capital ++ " is the capital of " ++ countryName ++ ".")

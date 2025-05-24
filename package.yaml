@@ -47,3 +47,4 @@ tests:
     dependencies:
     - london
     - HUnit
+    - hspec # Added hspec for Test.Hspec
